@@ -1,0 +1,28 @@
+{
+   "tools":{
+      "svn":{
+         "executable":"svn"
+      },
+      "ida32":{
+         "executable":"path_to\\idaw.exe"
+      },
+      "git":{
+         "executable":"path_to\\git.exe"
+      },
+      "dex2jar":{
+         "executable":"path_to\\d2j-dex2jar.bat"
+      },
+      "just_decompile_engine":{
+         "executable":"path_to\\JustDecompileEngine-ReleaseQ22016SP2-default-\\ConsoleRunner\\bin\\Debug\\ConsoleRunner.exe"
+      },
+      "7zip":{
+         "executable":"path_to\\7z.exe"
+      },
+      "jd-cli":{
+         "executable":"path_to\\jd-cli.bat"
+      },
+      "ida64":{
+         "executable":"path_to\\idaw64.exe"
+      }
+   }
+}

@@ -1,0 +1,957 @@
+{
+  "meta": {
+    "rulescount": 72, 
+    "version": 0.1
+  }, 
+  "rules": [
+    {
+      "id": 1, 
+      "longname": "PKZIP", 
+      "mimetype": "application/octet-stream", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x50\\x4B\\x05\\x06", 
+          "size": 4
+        }
+      ], 
+      "shortname": "ZIP"
+    }, 
+    {
+      "id": 2, 
+      "longname": "PKZIP", 
+      "mimetype": "text/plain", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x50\\x4B\\x07\\x08", 
+          "size": 4
+        }
+      ], 
+      "shortname": "ZIP"
+    }, 
+    {
+      "id": 3, 
+      "longname": "", 
+      "mimetype": "", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x30\\x00\\x00\\x00\\x4C\\x66\\x4C\\x65", 
+          "size": 8
+        }
+      ], 
+      "shortname": ""
+    }, 
+    {
+      "id": 4, 
+      "longname": "Musical Instrument Digital Interface (MIDI)", 
+      "mimetype": "audio/midi", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x4D\\x54\\x68\\x64", 
+          "size": 4
+        }
+      ], 
+      "shortname": "MIDI"
+    }, 
+    {
+      "id": 5, 
+      "longname": "Packet Capture (winpcap)", 
+      "mimetype": "application/vnd.tcpdump.pcap", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\xD4\\xC3\\xB2\\xA1", 
+          "size": 4
+        }
+      ], 
+      "shortname": "PCAP"
+    }, 
+    {
+      "id": 6, 
+      "longname": "Photoshop Document (PSD)", 
+      "mimetype": "image/vnd.adobe.photoshop", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x38\\x42\\x50\\x53\\x00\\x01", 
+          "size": 6
+        }
+      ], 
+      "shortname": "PSD"
+    }, 
+    {
+      "id": 7, 
+      "longname": "PKZIP", 
+      "mimetype": "application/zip", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x50\\x4B\\x03\\x04", 
+          "size": 4
+        }
+      ], 
+      "shortname": "ZIP"
+    }, 
+    {
+      "id": 8, 
+      "longname": "Microsoft Cabinet (CAB)", 
+      "mimetype": "text/plain", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x4D\\x53\\x43\\x46", 
+          "size": 4
+        }
+      ], 
+      "shortname": "CAB"
+    }, 
+    {
+      "id": 9, 
+      "longname": "Microsoft Object Linking and Embedding (OLE)", 
+      "mimetype": "application/octet-stream", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\xD0\\xCF\\x11\\xE0\\xA1\\xB1\\x1A\\xE1", 
+          "size": 8
+        }
+      ], 
+      "shortname": "OLE"
+    }, 
+    {
+      "id": 10, 
+      "longname": "MP3", 
+      "mimetype": "text/plain", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x49\\x44\\x33", 
+          "size": 3
+        }
+      ], 
+      "shortname": "MP3"
+    }, 
+    {
+      "id": 11, 
+      "longname": "MPEG", 
+      "mimetype": "video/mpeg", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x00\\x00\\x01\\xBA", 
+          "size": 4
+        }
+      ], 
+      "shortname": "MPG"
+    }, 
+    {
+      "id": 12, 
+      "longname": "ZIP", 
+      "mimetype": "application/zip", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x50\\x4B\\x03\\x04\\x14\\x00\\x00\\x00", 
+          "size": 8
+        }
+      ], 
+      "shortname": "ZIP"
+    }, 
+    {
+      "id": 13, 
+      "longname": "Packet Capture (winpcap;Big-endian)", 
+      "mimetype": "application/vnd.tcpdump.pcap", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\xA1\\xB2\\xC3\\xD4", 
+          "size": 4
+        }
+      ], 
+      "shortname": "PCAP"
+    }, 
+    {
+      "id": 14, 
+      "longname": "Windows Shortcut", 
+      "mimetype": "application/octet-stream", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x4C\\x00\\x00\\x00\\x01\\x14\\x02\\x00", 
+          "size": 8
+        }
+      ], 
+      "shortname": "LNK"
+    }, 
+    {
+      "id": 15, 
+      "longname": "Word Open XML", 
+      "mimetype": "application/zip", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x50\\x4B\\x03\\x04\\x14\\x00\\x06\\x00", 
+          "size": 8
+        }
+      ], 
+      "shortname": "DOCX"
+    }, 
+    {
+      "id": 16, 
+      "longname": "Windows Graphics Metafile", 
+      "mimetype": "text/plain", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\xD7\\xCD\\xC6\\x9A", 
+          "size": 4
+        }
+      ], 
+      "shortname": "WMF"
+    }, 
+    {
+      "id": 17, 
+      "longname": "Windows Icon", 
+      "mimetype": "image/x-icon", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x00\\x00\\x01\\x00", 
+          "size": 4
+        }
+      ], 
+      "shortname": "ICO"
+    }, 
+    {
+      "id": 18, 
+      "longname": "7zip", 
+      "mimetype": "application/x-7z-compressed", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x37\\x7A\\xBC\\xAF\\x27\\x1C", 
+          "size": 6
+        }
+      ], 
+      "shortname": "7Z"
+    }, 
+    {
+      "id": 19, 
+      "longname": "Audio Video Interleaved", 
+      "mimetype": "text/plain", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x52\\x49\\x46\\x46", 
+          "size": 4
+        }
+      ], 
+      "shortname": "AVI"
+    }, 
+    {
+      "id": 20, 
+      "longname": "Advanced Systems Format [Windows Media]", 
+      "mimetype": "video/x-ms-asf", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x30\\x26\\xB2\\x75\\x8E\\x66\\xCF\\x11", 
+          "size": 8
+        }
+      ], 
+      "shortname": "ASF"
+    }, 
+    {
+      "id": 21, 
+      "longname": "Compressed File (LZH)", 
+      "mimetype": "application/octet-stream", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x1F\\xA0", 
+          "size": 2
+        }
+      ], 
+      "shortname": "TAR.Z"
+    }, 
+    {
+      "id": 22, 
+      "longname": "Bitmap Image", 
+      "mimetype": "text/plain", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x42\\x4D", 
+          "size": 2
+        }
+      ], 
+      "shortname": "BMP"
+    }, 
+    {
+      "id": 23, 
+      "longname": "Compressed Flash File (LZMA)", 
+      "mimetype": "text/plain", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x5A\\x57\\x53", 
+          "size": 3
+        }
+      ], 
+      "shortname": "SWF"
+    }, 
+    {
+      "id": 24, 
+      "longname": "Compressed File (LZW)", 
+      "mimetype": "application/x-compress", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x1F\\x9D", 
+          "size": 2
+        }
+      ], 
+      "shortname": "TAR.Z"
+    }, 
+    {
+      "id": 25, 
+      "longname": "E-Mail Message", 
+      "mimetype": "text/plain", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x46\\x72\\x6F\\x6D", 
+          "size": 4
+        }
+      ], 
+      "shortname": "EML"
+    }, 
+    {
+      "id": 26, 
+      "longname": "Compressed Flash File (ZLIB)", 
+      "mimetype": "application/x-shockwave-flash", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x43\\x57\\x53", 
+          "size": 3
+        }
+      ], 
+      "shortname": "SWF"
+    }, 
+    {
+      "id": 27, 
+      "longname": "Flash Video", 
+      "mimetype": "video/x-flv", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x46\\x4C\\x56", 
+          "size": 3
+        }
+      ], 
+      "shortname": "FLV"
+    }, 
+    {
+      "id": 28, 
+      "longname": "eXtensible Markup Language (XML)", 
+      "mimetype": "text/plain", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x3C", 
+          "size": 1
+        }
+      ], 
+      "shortname": "XML"
+    }, 
+    {
+      "id": 29, 
+      "longname": "Executable and Linkable Format (ELF)", 
+      "mimetype": "application/x-executable-32", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x7F\\x45\\x4C\\x46\\x01", 
+          "size": 4
+        }
+      ], 
+      "shortname": "ELF"
+    }, 
+    {
+        "id": 29, 
+        "longname": "Executable and Linkable Format (ELF)", 
+        "mimetype": "application/x-executable-64", 
+        "patterns": [
+          {
+            "offset": 0, 
+            "regex": "\\x7F\\x45\\x4C\\x46\\x02", 
+            "size": 4
+          }
+        ], 
+        "shortname": "ELF"
+      }, 
+    {
+      "id": 30, 
+      "longname": "Excel Open XML", 
+      "mimetype": "application/zip", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x50\\x4B\\x03\\x04\\x14\\x00\\x06\\x00", 
+          "size": 8
+        }
+      ], 
+      "shortname": "XLSX"
+    }, 
+    {
+      "id": 31, 
+      "longname": "Windows Executable", 
+      "mimetype": "application/x-executable-mz", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x4D\\x5A", 
+          "size": 2
+        }
+      ], 
+      "shortname": "EXE"
+    }, 
+    {
+      "id": 32, 
+      "longname": "TrueType Font", 
+      "mimetype": "application/x-font-ttf", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x00\\x01\\x00\\x00\\x00", 
+          "size": 5
+        }
+      ], 
+      "shortname": "TTF"
+    }, 
+    {
+      "id": 33, 
+      "longname": "GZIP", 
+      "mimetype": "application/gzip", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x1F\\x8B\\x08", 
+          "size": 3
+        }
+      ], 
+      "shortname": "GZ"
+    }, 
+    {
+      "id": 34, 
+      "longname": "GIF Image", 
+      "mimetype": "image/gif", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x47\\x49\\x46\\x38", 
+          "size": 4
+        }
+      ], 
+      "shortname": "GIF"
+    }, 
+    {
+      "id": 35, 
+      "longname": "Java Archive (JAR)", 
+      "mimetype": "application/zip", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x50\\x4B\\x03\\x04\\x14\\x00\\x08\\x00", 
+          "size": 8
+        }
+      ], 
+      "shortname": "JAR"
+    }, 
+    {
+      "id": 36, 
+      "longname": "HyperText Markup Language (HTML)", 
+      "mimetype": "text/plain", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x3C", 
+          "size": 1
+        }
+      ], 
+      "shortname": "HTML"
+    }, 
+    {
+      "id": 37, 
+      "longname": "Matroska Stream", 
+      "mimetype": "application/octet-stream", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x1A\\x45\\xDF\\xA3\\x93\\x42\\x82\\x88", 
+          "size": 8
+        }
+      ], 
+      "shortname": "MKV"
+    }, 
+    {
+      "id": 38, 
+      "longname": "JPEG Image", 
+      "mimetype": "image/jpeg", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\xFF\\xD8\\xFF", 
+          "size": 3
+        }
+      ], 
+      "shortname": "JPG"
+    }, 
+    {
+      "id": 39, 
+      "longname": "Portable Network Graphics (PNG)", 
+      "mimetype": "text/plain", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x89\\x50\\x4E\\x47", 
+          "size": 4
+        }
+      ], 
+      "shortname": "PNG"
+    }, 
+    {
+      "id": 40, 
+      "longname": "Portable Document Format (PDF)", 
+      "mimetype": "application/pdf", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x25\\x50\\x44\\x46", 
+          "size": 4
+        }
+      ], 
+      "shortname": "PDF"
+    }, 
+    {
+      "id": 41, 
+      "longname": "Tcpdump Capture", 
+      "mimetype": "text/plain", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x34\\xCD\\xB2\\xA1", 
+          "size": 4
+        }
+      ], 
+      "shortname": "PCAP"
+    }, 
+    {
+      "id": 42, 
+      "longname": "Tagged Image File Format", 
+      "mimetype": "image/tiff", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x4D\\x4D\\x00\\x2A", 
+          "size": 4
+        }
+      ], 
+      "shortname": "TIF"
+    }, 
+    {
+      "id": 43, 
+      "longname": "Tagged Image File Format", 
+      "mimetype": "image/tiff", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x49\\x49\\x2A\\x00", 
+          "size": 4
+        }
+      ], 
+      "shortname": "TIF"
+    }, 
+    {
+      "id": 44, 
+      "longname": "Silverlight Application Package", 
+      "mimetype": "application/zip", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x50\\x4B\\x03\\x04", 
+          "size": 4
+        }
+      ], 
+      "shortname": "XAP"
+    }, 
+    {
+      "id": 45, 
+      "longname": "Rich Text Format", 
+      "mimetype": "text/rtf", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x7B\\x5C\\x72\\x74\\x66\\x31", 
+          "size": 6
+        }
+      ], 
+      "shortname": "RTF"
+    }, 
+    {
+      "id": 46, 
+      "longname": "PowerPoint Open XML format", 
+      "mimetype": "application/zip", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x50\\x4B\\x03\\x04\\x14\\x00\\x06\\x00", 
+          "size": 8
+        }
+      ], 
+      "shortname": "PPTX"
+    }, 
+    {
+      "id": 47, 
+      "longname": "", 
+      "mimetype": "", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x50\\x4B\\x53\\x70\\x58", 
+          "size": 5
+        }
+      ], 
+      "shortname": "PKSFX"
+    }, 
+    {
+      "id": 48, 
+      "longname": "", 
+      "mimetype": "", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x46\\x75\\x6E\\x63\\x74\\x69\\x6F\\x6E", 
+          "size": 8
+        }
+      ], 
+      "shortname": "VBS"
+    }, 
+    {
+      "id": 49, 
+      "longname": "", 
+      "mimetype": "", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x42\\x5A\\x68", 
+          "size": 3
+        }
+      ], 
+      "shortname": "BZip2"
+    }, 
+    {
+      "id": 50, 
+      "longname": "", 
+      "mimetype": "", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x52\\x61\\x72\\x21\\x1A\\x07", 
+          "size": 6
+        }
+      ], 
+      "shortname": "RAR"
+    }, 
+    {
+      "id": 51, 
+      "longname": "", 
+      "mimetype": "", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x57\\x69\\x6E\\x5A\\x69\\x70", 
+          "size": 6
+        }
+      ], 
+      "shortname": "WinZIP"
+    }, 
+    {
+      "id": 52, 
+      "longname": "", 
+      "mimetype": "", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x75\\x73\\x74\\x61\\x72", 
+          "size": 5
+        }
+      ], 
+      "shortname": "TAR"
+    }, 
+    {
+      "id": 53, 
+      "longname": "", 
+      "mimetype": "", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\xCA\\xFE\\xBA\\xBE", 
+          "size": 4
+        }
+      ], 
+      "shortname": "Class"
+    }, 
+    {
+      "id": 54, 
+      "longname": "", 
+      "mimetype": "", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\xFF\\x4B\\x45\\x59\\x42\\x20\\x20\\x20", 
+          "size": 8
+        }
+      ], 
+      "shortname": "SYS Keyboard Driver"
+    }, 
+    {
+      "id": 55, 
+      "longname": "", 
+      "mimetype": "", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\xFF\\xFE\\x3C\\x00\\x3F\\x00\\x78\\x00\\x6D\\x00\\x6C", 
+          "size": 11
+        }
+      ], 
+      "shortname": "Windows At Job"
+    }, 
+    {
+      "id": 56, 
+      "longname": "", 
+      "mimetype": "", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x72\\x65\\x67\\x66", 
+          "size": 4
+        }
+      ], 
+      "shortname": "Registry Hive"
+    }, 
+    {
+      "id": 57, 
+      "longname": "", 
+      "mimetype": "", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x3C\\x3F\\x70\\x68\\x70", 
+          "size": 5
+        }
+      ], 
+      "shortname": "PHP"
+    }, 
+    {
+      "id": 58, 
+      "longname": "", 
+      "mimetype": "", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x23\\x20\\x44\\x69\\x73\\x6B\\x20\\x44", 
+          "size": 8
+        }
+      ], 
+      "shortname": "VMDK"
+    }, 
+    {
+      "id": 59, 
+      "longname": "", 
+      "mimetype": "", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x43\\x4F\\x57\\x44", 
+          "size": 4
+        }
+      ], 
+      "shortname": "VMDK"
+    }, 
+    {
+      "id": 60, 
+      "longname": "", 
+      "mimetype": "", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x4B\\x44\\x4D", 
+          "size": 3
+        }
+      ], 
+      "shortname": "VMDK"
+    }, 
+    {
+      "id": 61, 
+      "longname": "", 
+      "mimetype": "", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x63\\x6F\\x6E\\x65\\x63\\x74\\x69\\x78", 
+          "size": 8
+        }
+      ], 
+      "shortname": "VHD"
+    }, 
+    {
+      "id": 62, 
+      "longname": "", 
+      "mimetype": "", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x41\\x45\\x53", 
+          "size": 3
+        }
+      ], 
+      "shortname": "AESCrypt"
+    }, 
+    {
+      "id": 63, 
+      "longname": "", 
+      "mimetype": "", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x43\\x57\\x53", 
+          "size": 3
+        }
+      ], 
+      "shortname": "SWF"
+    }, 
+    {
+      "id": 64, 
+      "longname": "", 
+      "mimetype": "", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x5A\\x57\\x53", 
+          "size": 3
+        }
+      ], 
+      "shortname": "SWF"
+    }, 
+    {
+      "id": 65, 
+      "longname": "", 
+      "mimetype": "", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x47\\x49\\x46", 
+          "size": 3
+        }
+      ], 
+      "shortname": "GIF"
+    }, 
+    {
+      "id": 66, 
+      "longname": "", 
+      "mimetype": "", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x3C\\x3F\\x78\\x6D\\x6C", 
+          "size": 5
+        }
+      ], 
+      "shortname": "XML"
+    }, 
+    {
+      "id": 67, 
+      "longname": "", 
+      "mimetype": "", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x46\\x49\\x4C\\x45", 
+          "size": 4
+        }
+      ], 
+      "shortname": "NTFS MFT"
+    }, 
+    {
+      "id": 68, 
+      "longname": "", 
+      "mimetype": "", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x4A\\x41\\x52\\x43\\x53\\x00", 
+          "size": 6
+        }
+      ], 
+      "shortname": "JARCS"
+    }, 
+    {
+      "id": 69, 
+      "longname": "", 
+      "mimetype": "", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x5F\\x43\\x41\\x53\\x45\\x5F", 
+          "size": 6
+        }
+      ], 
+      "shortname": "Encase File"
+    }, 
+    {
+      "id": 70, 
+      "longname": "", 
+      "mimetype": "", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x43\\x57\\x53", 
+          "size": 3
+        }
+      ], 
+      "shortname": "CWS"
+    }, 
+    {
+      "id": 71, 
+      "longname": "", 
+      "mimetype": "", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x5A\\x57\\x53", 
+          "size": 3
+        }
+      ], 
+      "shortname": "ZWS"
+    }, 
+    {
+      "id": 72, 
+      "longname": "", 
+      "mimetype": "", 
+      "patterns": [
+        {
+          "offset": 0, 
+          "regex": "\\x46\\x57\\x53", 
+          "size": 3
+        }
+      ], 
+      "shortname": "FWS"
+    }
+  ]
+}
