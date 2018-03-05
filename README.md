@@ -1,8 +1,8 @@
 # unbox
 
-*Unpack and Decompile the $h*! out of things*
+:gift: *Unpack and Decompile the $h*! out of things*
 
-//TBD
+// :construction: TBD
 
 Unbox is a convenient one-click unpack and decompiler tool that wraps existing 3rd party applications like IDA Pro,
 JD-Cli, Dex2Src, and others to provide a convenient archiver liker command line interfaces to unpack and decompile
@@ -14,7 +14,8 @@ interface.
 
 Supported Formats and 3rd Party Applications:
 
-|| Type   || Status ||  Tool Dependency || ref ||
+| Type   | Status |  Tool Dependency | ref |
+|--------|--------|------------------|-----|
 | archive | :heavy_check_mark: | python patool or 7z | - |
 | browser extension | :heavy_check_mark: | python patool or 7z | - |
 | .net application | :heavy_check_mark: | JustDecompile (windows) | https://github.com/telerik/JustDecompileEngine |
@@ -27,7 +28,7 @@ Supported Formats and 3rd Party Applications:
 
 Are you missing your favorite decompiler? Let me know!
 
-Requires: python-2
+Requires: :snake: python-2
 
 *Dependencies:*
 
@@ -42,16 +43,7 @@ Requires: python-2
 ** install missing 3rd party applications
 ** make them available in PATH or configure them in unbox.json
 
-
-# Add new tools and file formats
-
-TBD
-
-* add external command wrapper to `handler.commands.commands`
-* add the file handler to `handler.<archive,decompilable,local,remote>`
-* route the file to the correct handler in `handler.base.UniversalPath.get_path`
-
-# Usage
+# Usage :sheep:
 
 TBD
 
@@ -105,7 +97,9 @@ tmpfolder/unbox3fcvpg/7-zip32.c
 tmpfolder\unboxdaj2bd\7-zip32.c
 ```
 
-### Unpack and decompile apk (java) while decompiling binary applications on the fly (see ida output below)
+### Unpack and decompile apk
+
+(java) while decompiling binary applications on the fly (see ida output below)
 
 ```
 #> unbox/cli.py extract test.apk
@@ -273,3 +267,13 @@ tmpfolder\unboxsmansz\.source\org\stockchart\e\h.java
 [handler.base/13668][DEBUG     ] [base.get_path      ] <LocalPath encoding=None path=WindowsPath('tmpfolder//unboxsmansz/.source/org/stockchart/e/i.java')>
 tmpfolder\unboxsmansz\.source\org\stockchart\e\i.java
 ```
+
+# Contribute :trophy:
+
+## Add new tools and file formats
+
+TBD
+
+* add external command wrapper to `handler.commands.commands`
+* add the file handler to `handler.<archive,decompilable,local,remote>`
+* route the file to the correct handler in `handler.base.UniversalPath.get_path`
