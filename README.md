@@ -14,16 +14,16 @@ interface.
 
 Supported Formats and 3rd Party Applications:
 
-| Type   | Status |  Tool Dependency | ref |
+| Status   | Type |  Tool Dependency | ref |
 |--------|--------|------------------|-----|
-| archive | :heavy_check_mark: | python patool or 7z | - |
-| browser extension | :heavy_check_mark: | python patool or 7z | - |
-| .net application | :heavy_check_mark: | JustDecompile (windows) | https://github.com/telerik/JustDecompileEngine |
-| apk | :heavy_check_mark: | dex2jar and jd-cli | https://github.com/pxb1988/dex2jar |
-| compiled java | :heavy_check_mark: | jd-cli | https://github.com/kwart/jd-cmd |
-| binary applications | :heavy_check_mark: | IDA PRO or RetDec  :x: | https://www.hex-rays.com/products/ida/ and https://github.com/avast-tl/retdec |
-| compiled Ethereum solidity smart contract | :x: | porosity | https://github.com/comaeio/porosity/ |
-| compiled python| :x: | python-uncompyle6 | https://github.com/rocky/python-uncompyle6/ |
+| :heavy_check_mark: | archive | patool or 7z | - |
+| :heavy_check_mark: | browser extension | patool or 7z | - |
+| :heavy_check_mark: | .net application | JustDecompile (windows) | https://github.com/telerik/JustDecompileEngine |
+| :heavy_check_mark: | apk | dex2jar and jd-cli | https://github.com/pxb1988/dex2jar |
+| :heavy_check_mark: | compiled java | jd-cli | https://github.com/kwart/jd-cmd |
+| :heavy_check_mark: | binary applications |IDA PRO / RetDec  :x: | https://www.hex-rays.com/products/ida/  https://github.com/avast-tl/retdec |
+| :x: | Ethereum solidity smart contract | porosity | https://github.com/comaeio/porosity/ |
+| :x: | compiled python | python-uncompyle6 | https://github.com/rocky/python-uncompyle6/ |
 
 
 Are you missing your favorite decompiler? Let me know!
@@ -39,9 +39,9 @@ Requires: :snake: python-2
 # Setup
 
 * install the tool
-* check dependencies `python cli.py check-dependencies`
-** install missing 3rd party applications
-** make them available in PATH or configure them in unbox.json
+* check dependencies `python cli.py check-dependencies`  
+  * install missing 3rd party applications
+  * make them available in PATH or configure them in unbox.json
 
 # Usage :sheep:
 
