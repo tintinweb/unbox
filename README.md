@@ -1,67 +1,89 @@
-# unbox
+# :construction: unbox 
 
 :gift: *Unpack and Decompile the $h*! out of things*
 
-// :construction: TBD
 
-Unbox is a convenient one-click unpack and decompiler tool that wraps existing 3rd party applications like IDA Pro,
-JD-Cli, Dex2Src, and others to provide a convenient archiver liker command line interfaces to unpack and decompile
-various types of files. It currently features support for compiled binaries (.net, PE, elf, mach, ...), java classes,
-android application packages and various types of archives or browser extensions. The goal of this tool is mainly to
+**Unbox** is a convenient one-click unpack and decompiler tool that wraps existing 3rd party applications like *IDA Pro,
+JD-Cli, Dex2Src*, and others to provide a convenient archiver liker command line interfaces to unpack and decompile
+various types of files. It currently features support for compiled binaries (*.net, PE, elf, mach, ...*), *java classes,
+android application packages* and various types of archives or browser extensions. The goal of this tool is mainly to
 take off the extra efford needed to deal with the various decompiler tools and give a standard yet easy to use
 interface.
-
-
-Supported Formats and 3rd Party Applications:
-
-| Status   | Type |  Tool Dependency | ref |
-|--------|--------|------------------|-----|
-| :heavy_check_mark: | archive | patool or 7z | - |
-| :heavy_check_mark: | browser extension | patool or 7z | - |
-| :heavy_check_mark: | .net application | JustDecompile (windows) | https://github.com/telerik/JustDecompileEngine |
-| :heavy_check_mark: | apk | dex2jar and jd-cli | https://github.com/pxb1988/dex2jar |
-| :heavy_check_mark: | compiled java | jd-cli | https://github.com/kwart/jd-cmd |
-| :heavy_check_mark: | binary applications |IDA PRO / RetDec  :x: | https://www.hex-rays.com/products/ida/  https://github.com/avast-tl/retdec |
-| :x: | Ethereum solidity smart contract | porosity | https://github.com/comaeio/porosity/ |
-| :x: | compiled python | python-uncompyle6 | https://github.com/rocky/python-uncompyle6/ |
-
-
-Are you missing your favorite decompiler? Let me know!
 
 Requires: :snake: python-2
 
 *Dependencies:*
 
 * cigma - https://github.com/7h3rAm/cigma
-* patool - https://pypi.python.org/pypi/patool
+* patool - https://pypi.python.org/pypi/patool  
+
+# Usage :sheep:
+
+      example: unbox.py <command> [options] <target> [<target>, ...]
+      options:
+	       -y, --yes    ...   answer prompts with yes
+	       -n, --no     ...   answer prompts with no
+
+      command  ... list <target>
+	       ... extract <target> <destination path>
+
+	       ... check-dependencies
+
+      target   ... file
+      
+  
+*One interface to rule them all...*
+  
+| usage | command |
+|-------|---------|
+| unpack and decompile all ***.jar** files | `#> unbox/cli.py extract \lib\Adv*.jar c:\_tmp\decompiled` |
+| decompile a **Windows DDL** | `#> unbox/cli.py extract samples\7-zip32.dll c:\_tmp\decompiled` | 
+| decompile an **elf executable** | `#> unbox/cli.py extract samples\crackme1 /tmp/decompiled` | 
+| unpack and decompile an **apk** | `#> unbox/cli.py extract test.apk c:\_tmp\decompiled` |
+| decompile a **.net** application | `#> unbox/cli.py extract test.exe c:\_tmp\decompiled` | 
+| unpack a **browser extension** | `#> unbox/cli.py extract sample.crx c:\_tmp\decompiled` | 
+| unpack **anything** | `#> unbox/cli.py extract * c:\_tmp\decompiled` |
+	
+*I think you got the idea now. It does not matter what you want to decompile or unpack, its the same call...*
+
+# Configuration
+
+* in case a 3rd party tools is not generally available via *PATH* configure it in `unbox.json`
+
+search-path for `unbox.json` is 
+
+* current working dir OR
+* `~/unbox.json` OR
+* `~/.unbox/unbox.json`
 
 
 # Setup
 
-* install the tool
+* install
 * check dependencies `python cli.py check-dependencies`  
-  * install missing 3rd party applications
+  * install missing 3rd party applications (see table below)
   * make them available in PATH or configure them in unbox.json
+  
+  
+# As a Library
 
-# Usage :sheep:
+```python
 
-TBD
+from unbox import UnboxPath
 
-      example: cli.py <command> [options] <target> [<target>, ...]
-      options:
+target = "path/to/target/file"
 
-      command  ... list <target>
-               ... extract <target> <destination path>
+dst = UnboxPath(target)		# crate an unbox path instance
+for p in dst.files.walk():	# auto-decompile/unpack and walk resulting files (source-code, etc..)
+	print p.path		# print the unpacked files' path
+```
 
-               ... check-dependencies
-
-      target   ... file
-
+# Live Action
 
 ### List contents of windows DLL
 
 ```
-#> unbox/cli.py extract "samples\7-zip32.dll"
+#> unbox/cli.py list "samples\7-zip32.dll"
 [handler.base/2808][DEBUG     ] [base.get_path      ] unknown: 7-zip32.dll
 [handler.base/2808][DEBUG     ] [base.get_path      ] {'source': 'databuffer', 'magic': {'mimetype': 'application/x-executable-mz', 'patterns': [{'regex': '\\x4D\\x5A', 'offset': 0, 'size': 2}], 'shortname': 'EXE', 'id': 31, 'longname': 'Windows Executable'}}
 [handler.base/2808][DEBUG     ] [base.get_path      ] 2
@@ -277,3 +299,20 @@ TBD
 * add external command wrapper to `handler.commands.commands`
 * add the file handler to `handler.<archive,decompilable,local,remote>`
 * route the file to the correct handler in `handler.base.UniversalPath.get_path`
+
+
+## Supported Formats and implemented 3rd Party Applications:
+
+| Status   | Type |  Tool Dependency | ref |
+|--------|--------|------------------|-----|
+| :heavy_check_mark: | archive | patool or 7z | - |
+| :heavy_check_mark: | browser extension | patool or 7z | - |
+| :heavy_check_mark: | .net application | JustDecompile (windows) | https://github.com/telerik/JustDecompileEngine |
+| :heavy_check_mark: | apk | dex2jar and jd-cli | https://github.com/pxb1988/dex2jar |
+| :heavy_check_mark: | compiled java | jd-cli | https://github.com/kwart/jd-cmd |
+| :heavy_check_mark: | binary applications |IDA PRO / RetDec  :x: | https://www.hex-rays.com/products/ida/  https://github.com/avast-tl/retdec |
+| :x: | Ethereum solidity smart contract | porosity | https://github.com/comaeio/porosity/ |
+| :x: | compiled python | python-uncompyle6 | https://github.com/rocky/python-uncompyle6/ |
+
+
+Are you missing your favorite decompiler? Let me know or create a PR
