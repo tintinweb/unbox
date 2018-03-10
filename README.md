@@ -1,6 +1,6 @@
-# :construction: unbox 
+![unbox](https://user-images.githubusercontent.com/2865694/37244319-898e3e32-2487-11e8-846a-e792ef989974.png) *Unpack and Decompile the $h\*! out of things* 
 
-:gift: *Unpack and Decompile the $h*! out of things*
+# unbox
 
 
 **Unbox** is a convenient one-click unpack and decompiler tool that wraps existing 3rd party applications like *IDA Pro,
@@ -10,9 +10,9 @@ android application packages* and various types of archives or browser extension
 take off the extra efford needed to deal with the various decompiler tools and give a standard yet easy to use
 interface.
 
-Requires: :snake: python-2
+Requires: :snake: python-2   
 
-*Dependencies:*
+**Dependencies:**
 
 * cigma - https://github.com/7h3rAm/cigma
 * patool - https://pypi.python.org/pypi/patool  
@@ -44,13 +44,14 @@ Requires: :snake: python-2
 | unpack a **browser extension** | `#> unbox/cli.py extract sample.crx c:\_tmp\decompiled` | 
 | unpack **anything** | `#> unbox/cli.py extract * c:\_tmp\decompiled` |
 	
-*I think you got the idea now. It does not matter what you want to decompile or unpack, its the same call...*
+*I think you got the idea ...*
+
 
 # Configuration
 
-* in case a 3rd party tools is not generally available via *PATH* configure it in `unbox.json`
+* in case your 3rd party tools are not generally available via *PATH* configure them in `unbox.json`
 
-search-path for `unbox.json` is 
+application search-path order for `unbox.json` is 
 
 * current working dir OR
 * `~/unbox.json` OR
