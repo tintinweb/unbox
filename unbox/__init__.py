@@ -3,7 +3,7 @@
 # Author : <github.com/tintinweb>
 
 from config import load_config
-from handler.base import UniversalPath
+from handler.base import UnboxPath
 
 CONFIG = load_config("..")
 

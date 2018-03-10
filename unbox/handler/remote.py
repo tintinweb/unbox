@@ -62,7 +62,7 @@ class Web(LocalPath):
         self.tmp_local_file = TempFile()
         self.tmp_local_file.mkfile(suffix='.' + source.rsplit('.', 1)[1])
         source = self._fetch(source, str(self.tmp_local_file))
-        source = base.UniversalPath.get_path(source)
+        source = base.UnboxPath.get_path(source)
         LocalPath.__init__(self, source.path.absolute())
 
     def _fetch(self, source, destination):

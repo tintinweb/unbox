@@ -14,7 +14,7 @@ import os, glob
 from distutils.dir_util import copy_tree
 import logging
 import handler.commands
-from handler.base import UniversalPath
+from handler.base import UnboxPath
 
 logger = logging.getLogger(__name__)
 
@@ -34,7 +34,7 @@ def auto_prompt(s, options):
 def cmd_extract(options):
     ret = 0
     for fglob in glob.glob(options.args[0]):
-        dst = UniversalPath(fglob)
+        dst = UnboxPath(fglob)
         try:
             for p in dst.files.walk():
                 print p.path
@@ -55,7 +55,7 @@ def cmd_extract(options):
 
 def cmd_list(options):
     for fglob in glob.glob(options.args[0]):
-        dst = UniversalPath(fglob)
+        dst = UnboxPath(fglob)
         try:
             for p in dst.files.walk():
                 print p.path
@@ -78,8 +78,8 @@ COMMANDS = {
 }
 
 def main():
-    usage = """poc.py [options]
-              example: poc.py <command> [options] <target> [<target>, ...]
+    usage = """unbox.py [options]
+              example: unbox.py <command> [options] <target> [<target>, ...]
               options:
                        -y, --yes    ...   answer prompts with yes
                        -n, --no     ...   answer prompts with no

@@ -51,7 +51,7 @@ class LocalPath(object):
                     # if we do not want to force inclusion, check exclusion list
                     if any(regex.match(normalized_abspath) for regex in exclude_rex):
                         continue
-                gp = base.UniversalPath.get_path(abspath)
+                gp = base.UnboxPath.get_path(abspath)
                 if gp.path.is_file():
                     yield gp
                 elif gp.path.is_dir():

@@ -16,7 +16,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-class UniversalPath(object):
+class UnboxPath(object):
 
     def __init__(self, source):
         self.source = source
@@ -24,7 +24,7 @@ class UniversalPath(object):
 
     @property
     def files(self):
-        self._files = self._files or UniversalPath.get_path(self.source)
+        self._files = self._files or UnboxPath.get_path(self.source)
         return self._files
 
     @staticmethod
