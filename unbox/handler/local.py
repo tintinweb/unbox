@@ -43,7 +43,6 @@ class LocalPath(object):
 
     def walk(self, exclude_rex=[re.compile(r'.*/.git.*'), ], include_rex=[]):
         logger.debug("walk: %s"%self.path.absolute())
-        raw_input()
         for root, _, files in os.walk(str(self.path.absolute())):
             for filename in files:
                 abspath = os.path.join(root, filename)

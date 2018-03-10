@@ -10,32 +10,57 @@ Decompile the Shit out of things.
 
 import sys
 import argparse
+import os, glob
+from distutils.dir_util import copy_tree
 import logging
 import handler.commands
 from handler.base import UniversalPath
 
 logger = logging.getLogger(__name__)
 
+def auto_prompt(s, options):
+    q = "\n\n[i] %s" %s
+    if options.yes:
+        print "%s\n<--yes"%q
+        return True
+    elif options.no:
+        print "%s\n<--no" % q
+        return False
+    yn = raw_input(q).strip()
+    if yn=="y":
+        return True
+    return False
 
 def cmd_extract(options):
-    dst = UniversalPath(options.args[0])
-    try:
-        for p in dst.files.walk():
-            print p.path
-    finally:
-        pass
-       #dst.files.unlink()
-    return 0
+    ret = 0
+    for fglob in glob.glob(options.args[0]):
+        dst = UniversalPath(fglob)
+        try:
+            for p in dst.files.walk():
+                print p.path
+            if len(options.args) >= 2:
+                if os.path.exists(options.args[1]) and \
+                        auto_prompt("Destination %s already exists. Overwrite? [y|n]" % options.args[1], options):
+                    copy_tree(str(dst.files.path), options.args[1])
+                    logger.info("moved files to %s" % options.args[1])
+        finally:
+            logger.debug("--cleanup--")
+            if os.path.exists(str(dst.files.path)):
+                logger.debug("deleting tempfolder")
+                dst.files.unlink()
+            ret = 1
+    logger.info("--done--")
+    return ret
 
 
 def cmd_list(options):
-    dst = UniversalPath(options.args[0])
-    try:
-        for p in dst.files.walk():
-            print p.path
-    finally:
-        pass
-        dst.files.unlink()
+    for fglob in glob.glob(options.args[0]):
+        dst = UniversalPath(fglob)
+        try:
+            for p in dst.files.walk():
+                print p.path
+        finally:
+            dst.files.unlink()
     return 0
 
 
@@ -56,6 +81,8 @@ def main():
     usage = """poc.py [options]
               example: poc.py <command> [options] <target> [<target>, ...]
               options:
+                       -y, --yes    ...   answer prompts with yes
+                       -n, --no     ...   answer prompts with no
 
               command  ... list <target>
                        ... extract <target> <destination path>
@@ -87,6 +114,14 @@ def main():
                             action="store_true",
                             dest="decompile", default=False,
                             help="decompile")
+        parser.add_argument("-y", "--yes",
+                            action="store_true",
+                            dest="yes", default=False,
+                            help="answer prompts with yes")
+        parser.add_argument("-n", "--n",
+                            action="store_true",
+                            dest="no", default=False,
+                            help="answer prompts with no")
         parser.add_argument("args", nargs="+")
 
         options = parser.parse_args()
