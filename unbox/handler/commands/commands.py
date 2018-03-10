@@ -11,7 +11,7 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-CONFIG = config.load_config("..")
+CONFIG = config.load_config()
 
 from ..utils.shell import Shell
 from ..utils.web import download_file

@@ -15,7 +15,8 @@ def load_config(prefix=None):
     home = os.path.expanduser("~")
     candidate_paths = [os.path.join(os.getcwd(), CONFIG_NAME),
                        os.path.join(home, CONFIG_NAME),
-                       get_download_dir()]
+                       os.path.join(get_download_dir(), CONFIG_NAME)]
+
     if prefix:
         candidate_paths.insert(0, os.path.join(prefix, CONFIG_NAME))
 
