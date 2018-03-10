@@ -25,9 +25,9 @@ Requires: :snake: python-2
 	       -n, --no     ...   answer prompts with no
 
       command  ... list <target>
-	       ... extract <target> <destination path>
+               ... extract <target> <destination path>
 
-	       ... check-dependencies
+               ... check-dependencies
 
       target   ... file
       
