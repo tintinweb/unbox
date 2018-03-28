@@ -37,14 +37,15 @@ Requires: :snake: python-2
 | usage | command |
 |-------|---------|
 | unpack and decompile all ***.jar** files | `#> unbox/cli.py extract \lib\Adv*.jar c:\_tmp\decompiled` |
-| decompile a **Windows DDL** | `#> unbox/cli.py extract samples\7-zip32.dll c:\_tmp\decompiled` | 
-| decompile an **elf executable** | `#> unbox/cli.py extract samples\crackme1 /tmp/decompiled` | 
+| decompile a **Windows dll** | `#> unbox/cli.py extract samples\7-zip32.dll c:\_tmp\decompiled` | 
+| decompile an **elf executable** | `#> unbox/cli.py extract samples/crackme1 /tmp/decompiled` | 
 | unpack and decompile an **apk** | `#> unbox/cli.py extract test.apk c:\_tmp\decompiled` |
 | decompile a **.net** application | `#> unbox/cli.py extract test.exe c:\_tmp\decompiled` | 
 | unpack a **browser extension** | `#> unbox/cli.py extract sample.crx c:\_tmp\decompiled` | 
-| unpack **anything** | `#> unbox/cli.py extract * c:\_tmp\decompiled` |
+| unpack **all supported** files | `#> unbox/cli.py extract * c:\_tmp\decompiled` |
 	
 *I think you got the idea ...*
+*... and yes it will recursively unpack things ...*
 
 
 # Configuration
