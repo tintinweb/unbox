@@ -44,7 +44,7 @@ Requires: :snake: python-2
 | unpack a **browser extension** | `#> unbox/cli.py extract sample.crx c:\_tmp\decompiled` | 
 | unpack **all supported** files | `#> unbox/cli.py extract * c:\_tmp\decompiled` |
 	
-*I think you got the idea ...*
+*I think you got the idea ...*   
 *... and yes it will recursively unpack things ...*
 
 
